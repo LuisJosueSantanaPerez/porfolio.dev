@@ -1,6 +1,8 @@
 ---
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import Vue from "./icons/Vue.astro"
+import Bootstrap from "./icons/Bootstrap.astro"
 
 const TAGS = {
   NEXT: {
@@ -13,8 +15,25 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  VUE:{
+    name: "Vue js",
+    class: "bg-black text-white",
+    icon: Vue
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-black text-white",
+    icon: Bootstrap
+  }
 }
-const PROJECTS = [
+const PROJECTS: any[] = [
+  {
+    title: "Ticket System App",
+    description: "It is a basic system in which an employee logs in, can create, update and delete tickets, can create an employee, and then can generate a report to obtain the hours worked.",
+    github: "https://github.com/LuisJosueSantanaPerez/ticket-system-app",
+    image: "/projects/ticket.png",
+    tags:[TAGS.VUE, TAGS.BOOTSTRAP]
+  },
   // {
   //   title: "SVGL - A beautiful library with SVG logos",
   //   description:
@@ -33,7 +52,7 @@ const PROJECTS = [
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
-        {tags.map((tag) => (
+        {tags.map((tag: any) => (
           <li>
             <span
               class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
