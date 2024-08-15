@@ -3,6 +3,7 @@ import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Vue from "./icons/Vue.astro"
 import Bootstrap from "./icons/Bootstrap.astro"
+import Quasar from "./icons/Quasar.astro"
 
 const TAGS = {
   NEXT: {
@@ -24,6 +25,11 @@ const TAGS = {
     name: "Bootstrap",
     class: "bg-black text-white",
     icon: Bootstrap
+  },
+  QUASAR: {
+    name: "Quasar",
+    class: "bg-black text-white width-12 height-12",
+    icon: Quasar
   }
 }
 const PROJECTS: any[] = [
@@ -34,13 +40,20 @@ const PROJECTS: any[] = [
     image: "/projects/ticket.png",
     tags:[TAGS.VUE, TAGS.BOOTSTRAP]
   },
+  {
+    title: "Ajna Licor",
+    description: "Artisanal Liquors",
+    link: "https://ajna-licores.netlify.app/",
+    image: "/projects/ajna.png",
+    tags:[TAGS.VUE, TAGS.QUASAR]
+  }
 ]
 ---
 
 {
-  PROJECTS.map(({ image, title, description, tags }) => (
+  PROJECTS.map(({ image, title, description, tags, link }) => (
     <article>
-      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2"></h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
       <ul class="flex gap-x-2 flex-row mb-2">
         {tags.map((tag: any) => (
